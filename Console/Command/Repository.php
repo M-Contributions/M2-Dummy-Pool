@@ -58,8 +58,8 @@ class Repository extends Command
      */
     protected function launch(OutputInterface $output)
     {
-        $this->getList();
         $output->writeln("Launching repository command...");
+        $this->getSingle();
     }
 
     protected function getList()
@@ -68,7 +68,8 @@ class Repository extends Command
         $criteriaBuilder->addFilter('reference_id', 3);
         $criteria = $criteriaBuilder->create();
         $list = $this->dummyRepository->getList($criteria);
-        print_r($list->getItems()[1]->getData());
+        $item = $list->getTotalCount() > 0 ? $list->getItems()[0]->getData() : null;
+        print_r($item);
     }
 
     protected function getSingle()
@@ -77,13 +78,13 @@ class Repository extends Command
         $criteriaBuilder->addFilter('reference_id', 3);
         $criteria = $criteriaBuilder->create();
         $single = $this->dummyRepository->getSingle($criteria);
-        print_r($single->getData());
+        print_r($single ? $single->getData() : 'Not Found');
     }
 
     protected function getById()
     {
         $object = $this->dummyRepository->getById(3);
-        print_r($object ? $object->getData() : 'Not found');
+        print_r($object ? $object->getData() : 'Not Found');
     }
 
     protected function deleteById()
