@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <type name="Magento\Framework\Console\CommandList">
+        <arguments>
+            <argument name="commands" xsi:type="array">
+                <item name="ticaje_dummy_command_repository" xsi:type="object">Ticaje\Dummy\Console\Command\Repository</item>
+            </argument>
+        </arguments>
+    </type>
+
+    <virtualType name="Ticaje\Dummy\Repository\DummyRepository" type="Ticaje\Core\Repository\Base\BaseRepository">
+        <arguments>
+            <argument name="object" xsi:type="string">Ticaje\Dummy\Model\Dummy</argument>
+            <argument name="collection" xsi:type="string">Ticaje\Dummy\Model\ResourceModel\Dummy\Collection</argument>
+            <argument name="searchResultsFactory" xsi:type="object">Magento\Framework\Api\SearchResultsInterfaceFactory</argument>
+        </arguments>
+    </virtualType>
+
+    <type name="Ticaje\Dummy\Console\Command\Repository">
+        <arguments>
+            <argument name="dummyRepository" xsi:type="object">Ticaje\Dummy\Repository\DummyRepository</argument>
+        </arguments>
+    </type>
+</config>
