@@ -2,7 +2,7 @@
 declare(strict_types=1);
 
 /**
- * Base Repository Class
+ * Command Class
  * @category    Ticaje
  * @package     Ticaje_Dummy
  * @author      Hector Luis Barrientos <ticaje@filetea.me>
@@ -27,13 +27,11 @@ class Repository extends Command
 
     private $om;
 
-    public function __construct
-    (
+    public function __construct(
         BaseRepositoryInterface $dummyRepository,
         ObjectManagerInterface $objectManager,
         string $name = null
-    )
-    {
+    ) {
         $this->dummyRepository = $dummyRepository;
         $this->om = $objectManager;
         parent::__construct($name);
@@ -93,5 +91,4 @@ class Repository extends Command
         $delete = $this->dummyRepository->deleteById(1);
         print_r($delete);
     }
-
 }
