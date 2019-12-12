@@ -4,7 +4,7 @@ declare(strict_types=1);
 /**
  * Configuration Interface
  * @category    Ticaje
- * @package     Ticaje_Configuration
+ * @package     Ticaje_Dummy
  * @author      Hector Luis Barrientos <ticaje@filetea.me>
  */
 
