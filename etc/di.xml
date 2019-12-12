@@ -8,7 +8,7 @@
         </arguments>
     </type>
 
-    <virtualType name="Ticaje\Dummy\Repository\DummyRepository" type="Ticaje\Core\Repository\Base\BaseRepository">
+    <virtualType name="Ticaje\Dummy\Repository\DummyRepository" type="Ticaje\Base\Repository\Base\BaseRepository">
         <arguments>
             <argument name="object" xsi:type="string">Ticaje\Dummy\Model\Dummy</argument>
             <argument name="collection" xsi:type="string">Ticaje\Dummy\Model\ResourceModel\Dummy\Collection</argument>

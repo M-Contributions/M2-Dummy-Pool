@@ -7,7 +7,7 @@
 
 ## Preface
 
-This extension uses [Magento 2 Base Extension](https://github.com/M-Contributions/Core) to test its functionalities.
+This extension uses [Magento 2 Base Extension](https://github.com/M-Contributions/Base) to test its functionalities.
 
 ## Installation
 
