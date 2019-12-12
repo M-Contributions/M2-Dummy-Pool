@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<include xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_include.xsd">
+    <group id="connector" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1"
+           showInStore="0">
+        <label>API Settings</label>
+        <group id="general" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1"
+               showInStore="0">
+            <label>General</label>
+            <field id="production_environment" translate="label" type="select" sortOrder="1" showInDefault="1"
+                   showInWebsite="1" showInStore="0">
+                <label>Production Environment</label>
+                <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+            </field>
+            <field id="base_uri" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="1"
+                   showInStore="0">
+                <label>Base URI</label>
+            </field>
+        </group>
+    </group>
+</include>
