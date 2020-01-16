@@ -30,4 +30,4 @@ I have created a command class to provide room for testing Repository Base class
 
 ## License
 
-The MIT License (MIT). Please see [License File](LICENSE.md) for more information.
+The GNU General Public License (GPLv3). Please see [License File](LICENSE.md) for more information.
