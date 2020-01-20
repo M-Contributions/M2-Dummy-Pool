@@ -8,6 +8,7 @@
             <argument name="commands" xsi:type="array">
                 <item name="ticaje_dummy_command_repository" xsi:type="object">Ticaje\Dummy\Console\Command\Repository</item>
                 <item name="ticaje_dummy_command_configuration" xsi:type="object">Ticaje\Dummy\Console\Command\Configuration</item>
+                <item name="ticaje_dummy_command_connector" xsi:type="object">Ticaje\Dummy\Console\Command\Connector</item>
             </argument>
         </arguments>
     </type>
@@ -25,4 +26,19 @@
             <argument name="dummyRepository" xsi:type="object">Ticaje\Dummy\Repository\DummyRepository</argument>
         </arguments>
     </type>
+
+    <virtualType name="Ticaje\Dummy\Gateway\Provider\Token\Token" type="Ticaje\Connector\Gateway\Provider\Token\Token">
+        <arguments>
+            <argument name="connector" xsi:type="object">Ticaje\Connector\Gateway\Client\Rest</argument>
+            <argument name="endpoint" xsi:type="string">auth/oauth/v2/token</argument>
+            <argument name="verb" xsi:type="string">POST</argument>
+        </arguments>
+    </virtualType>
+
+    <type name="Ticaje\Dummy\Console\Command\Connector">
+        <arguments>
+            <argument name="tokenProvider" xsi:type="object">Ticaje\Dummy\Gateway\Provider\Token\Token</argument>
+        </arguments>
+    </type>
+
 </config>
