@@ -48,14 +48,14 @@ class Connector extends Command
     protected function execute(InputInterface $input, OutputInterface $output)
     {
         $credentials = [
-            ClientInterface::BASE_URI_KEY => 'https://apiuat.evobanco.com:8443/'
+            ClientInterface::BASE_URI_KEY => 'https://dummy-domain.com:8443/'
         ];
         $params = [
-            'grant_type' => 'onboarding',
-            'scope' => 'otp',
-            'client_id' => '5cd3375d-f845-4375-ab86-7d59b2363d9a',
-            'client_secret' => 'dcad6955-dccb-4127-b964-b7a69f8a4e97',
-            'username' => 'new_client'
+            'grant_type' => 'example',
+            'scope' => 'example',
+            'client_id' => 'example',
+            'client_secret' => 'example',
+            'username' => 'example'
         ];
         $token = $this->tokenProvider
             ->initialize($credentials)
