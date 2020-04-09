@@ -27,11 +27,16 @@
         </arguments>
     </type>
 
+    <!-- It's mandatory using the REST client as a VT instead of class it self so avoiding collisions -->
+    <virtualType name="Ticaje\Dummy\Gateway\Client\Rest" type="Ticaje\Connector\Gateway\Client\Rest">
+    </virtualType>
+
     <virtualType name="Ticaje\Dummy\Gateway\Provider\Token\Token" type="Ticaje\Connector\Gateway\Provider\Token\Token">
         <arguments>
-            <argument name="connector" xsi:type="object">Ticaje\Connector\Gateway\Client\Rest</argument>
+            <argument name="connector" xsi:type="object">Ticaje\Dummy\Gateway\Client\Rest</argument>
             <argument name="endpoint" xsi:type="string">auth/oauth/v2/token</argument>
-            <argument name="verb" xsi:type="string">POST</argument>
+            <argument name="verb" xsi:type="string">GET</argument>
+            <argument name="baseUri" xsi:type="string">https://api.dummy.domain.com/</argument>
         </arguments>
     </virtualType>
 

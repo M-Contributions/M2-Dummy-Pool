@@ -14,8 +14,6 @@ use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 
-use Ticaje\Connector\Gateway\Client\Rest as RestClient;
-use Ticaje\Connector\Interfaces\ClientInterface;
 use Ticaje\Connector\Interfaces\Provider\Token\TokenProviderInterface;
 
 /**
@@ -24,16 +22,12 @@ use Ticaje\Connector\Interfaces\Provider\Token\TokenProviderInterface;
  */
 class Connector extends Command
 {
-    protected $client;
-
     protected $tokenProvider;
 
     public function __construct(
-        RestClient $client,
         TokenProviderInterface $tokenProvider,
         string $name = null
     ) {
-        $this->client = $client;
         $this->tokenProvider = $tokenProvider;
         parent::__construct($name);
     }
@@ -47,9 +41,6 @@ class Connector extends Command
 
     protected function execute(InputInterface $input, OutputInterface $output)
     {
-        $credentials = [
-            ClientInterface::BASE_URI_KEY => 'https://dummy-domain.com:8443/'
-        ];
         $params = [
             'grant_type' => 'example',
             'scope' => 'example',
@@ -58,7 +49,6 @@ class Connector extends Command
             'username' => 'example'
         ];
         $token = $this->tokenProvider
-            ->initialize($credentials)
             ->setParams($params)
             ->getAccessToken();
         $output->writeln($token);
