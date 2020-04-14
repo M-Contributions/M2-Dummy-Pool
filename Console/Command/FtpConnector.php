@@ -14,8 +14,8 @@ use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 
-use Ticaje\Connector\Gateway\Client\Ftp as FtpClient;
-use Ticaje\Connector\Gateway\Provider\Credentials as CredentialsManager;
+use Ticaje\AConnector\Gateway\Client\Ftp as FtpClient;
+use Ticaje\AConnector\Gateway\Provider\Credentials as CredentialsManager;
 
 /**
  * Class Instantiate
