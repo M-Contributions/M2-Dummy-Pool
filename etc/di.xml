@@ -27,8 +27,47 @@
         </arguments>
     </type>
 
+    <!--type name="Ticaje\AConnector\Gateway\Client\Rest">
+        <arguments>
+            <argument name="responder" xsi:type="object">Ticaje\Aliexpress\Gateway\Client\Decorator\Responder</argument>
+            <argument name="clientFactory" xsi:type="object">Ticaje\Aliexpress\Factory\Client\Rest\GuzzleClientFactory</argument>
+            <argument name="implementor" xsi:type="object">Ticaje\AConnector\Gateway\Implementations\Client\Rest\Implementor</argument>
+            <argument name="baseUriKey" xsi:type="string">base_uri</argument>
+        </arguments>
+    </type-->
+
+    <!-- Rest Client Recipes-->
+
+    <virtualType name="Ticaje\Dummy\Application\Service\ServiceLocator" type="Ticaje\Contract\Application\Service\ServiceLocator">
+    </virtualType>
+
+    <virtualType name="Ticaje\Dummy\Factory\Client\Rest\GuzzleClientFactory" type="Ticaje\AConnector\Factory\Base">
+        <arguments>
+            <argument name="serviceLocator" xsi:type="object">Ticaje\Dummy\Application\Service\ServiceLocator</argument>
+            <argument name="instanceName" xsi:type="string">GuzzleHttp\Client</argument>
+        </arguments>
+    </virtualType>
+
+    <virtualType name="Ticaje\Dummy\Gateway\Client\Decorator\Responder" type="Ticaje\Contract\Patterns\Implementation\Decorator\Responder">
+        <arguments>
+            <argument name="response" xsi:type="object">Ticaje\Contract\Patterns\Implementation\Decorator\Responder\Response</argument>
+        </arguments>
+    </virtualType>
+
+    <virtualType name="Ticaje\Dummy\Gateway\Implementations\Client\Rest\Implementor" type="Ticaje\AConnector\Gateway\Implementations\Client\Rest\Guzzle">
+    </virtualType>
+
+    <!-- Rest Client Recipes-->
+
+
     <!-- It's mandatory using the REST client as a VT instead of class it self so avoiding collisions -->
     <virtualType name="Ticaje\Dummy\Gateway\Client\Rest" type="Ticaje\AConnector\Gateway\Client\Rest">
+        <arguments>
+            <argument name="responder" xsi:type="object">Ticaje\Dummy\Gateway\Client\Decorator\Responder</argument>
+            <argument name="clientFactory" xsi:type="object">Ticaje\Dummy\Factory\Client\Rest\GuzzleClientFactory</argument>
+            <argument name="implementor" xsi:type="object">Ticaje\Dummy\Gateway\Implementations\Client\Rest\Implementor</argument>
+            <argument name="baseUriKey" xsi:type="string">base_uri</argument>
+        </arguments>
     </virtualType>
 
     <virtualType name="Ticaje\Dummy\Gateway\Provider\Token\Token" type="Ticaje\AConnector\Gateway\Provider\Token\Token">
