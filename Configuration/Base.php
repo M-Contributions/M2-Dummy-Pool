@@ -16,18 +16,11 @@ use Ticaje\Configuration\Setting\Base as ParentClass;
  * Class Base
  * @package Ticaje\Dummy\Configuration
  */
-abstract class Base extends ParentClass implements GeneralInterface
+abstract class Base extends ParentClass implements ConfigInterface
 {
-    protected $xmlBasePath = ConfigInterface::XML_BASE_PATH;
-
-    protected $generalPath = GeneralInterface::XML_FIELD_GENERAL; // This is general section
-
     /**
-     * @param null $storeId
-     * @return mixed|string
+     * @param $configPath
+     * @return mixed
      */
-    public function inDebugMode($storeId = null)
-    {
-        return $this->getGeneralConfig(self::DEBUG_MODE_FIELD, $storeId);
-    }
+    abstract protected function getLocalPath($configPath);
 }

@@ -10,21 +10,30 @@ declare(strict_types=1);
 
 namespace Ticaje\Dummy\Configuration;
 
-use Ticaje\Configuration\Setting\GeneralInterface as ParentInterface;
-
 /**
  * Interface GeneralInterface
  * @package Ticaje\Dummy\Configuration
  * This interface inherits from Ticaje\Configuration\Setting\GeneralInterface because it makes room for creating
  * more configurations within uppermost general node, im our example it's dummy_config/general
  */
-interface GeneralInterface extends ParentInterface
+interface GeneralInterface
 {
-    const DEBUG_MODE_FIELD = 'debug_mode'; // As an example we're hereby creating a config called debug mode. Look at system.xml file.
+    const XML_GROUP_PATH = 'general';
+
+    const DEBUG_MODE_FIELD = 'debug_mode';
+
+    const ENABLED_FIELD = 'enabled';
+
+    const PRODUCTION_ENVIRONMENT_FIELD = 'production_environment';
+    /**
+     * @param null $storeId
+     * @return bool
+     */
+    public function inDebugMode($storeId = null): bool;
 
     /**
      * @param null $storeId
-     * @return mixed
+     * @return bool
      */
-    public function inDebugMode($storeId = null);
+    public function isEnabled($storeId = null): bool;
 }

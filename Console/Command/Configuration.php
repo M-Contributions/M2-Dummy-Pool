@@ -14,7 +14,7 @@ use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 
-use Ticaje\Dummy\Configuration\ConnectorInterface;
+use Ticaje\Dummy\Configuration\GeneralInterface;
 
 /**
  * Class Configuration
@@ -22,13 +22,13 @@ use Ticaje\Dummy\Configuration\ConnectorInterface;
  */
 class Configuration extends Command
 {
-    private $connectorConfiguration;
+    private $generalConfiguration;
 
     public function __construct(
-        ConnectorInterface $connector,
+        GeneralInterface $generalConfiguration,
         string $name = null
     ) {
-        $this->connectorConfiguration = $connector;
+        $this->generalConfiguration = $generalConfiguration;
         parent::__construct($name);
     }
 
@@ -54,11 +54,9 @@ class Configuration extends Command
     protected function launch(OutputInterface $output)
     {
         $output->writeln("Launching config command...");
-        $url = $this->connectorConfiguration->getBaseUri();
-        $enabled =  $this->connectorConfiguration->isEnabled();
-        $debug =  $this->connectorConfiguration->inDebugMode();
+        $enabled =  $this->generalConfiguration->isEnabled();
+        $debug =  $this->generalConfiguration->inDebugMode();
         $output->writeln("Enabled: $enabled");
-        $output->writeln("Base Uri: $url");
         $output->writeln("Debug Mode: $debug");
     }
 }

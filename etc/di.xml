@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
 
-    <preference for="Ticaje\Dummy\Configuration\ConnectorInterface" type="Ticaje\Dummy\Configuration\Connector"/>
+    <preference for="Ticaje\Dummy\Configuration\GeneralInterface" type="Ticaje\Dummy\Configuration\General"/>
 
     <type name="Magento\Framework\Console\CommandList">
         <arguments>
