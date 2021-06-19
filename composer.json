@@ -13,7 +13,7 @@
   "description": "This extension creates room for testing core module functionalities",
   "type": "magento2-module",
   "require": {
-    "php": "^7.0",
+    "php": "^7.1",
     "magento/product-community-edition": "*",
     "ticaje/base": "^1.0",
     "ticaje/m2-configuration": "^1.0",
