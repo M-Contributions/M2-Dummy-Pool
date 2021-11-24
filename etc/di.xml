@@ -13,13 +13,36 @@
         </arguments>
     </type>
 
-    <virtualType name="Ticaje\Dummy\Repository\DummyRepository" type="Ticaje\Base\Repository\Base\BaseRepository">
+    <!-- ORM definition -->
+
+    <!-- Resource definition -->
+    <virtualType name="Ticaje\Dummy\Model\ResourceModel\Dummy" type="Ticaje\Persistence\Entity\Resource\Base">
+        <arguments>
+            <argument name="tableName" xsi:type="string">dummy_table</argument>
+            <argument name="referenceId" xsi:type="string">entity_id</argument>
+        </arguments>
+    </virtualType>
+    <!-- Resource definition -->
+
+    <!-- Collection definition -->
+    <virtualType name="Ticaje\Dummy\Model\ResourceModel\Dummy\Collection" type="Ticaje\Persistence\Entity\Resource\Collection\Base">
+        <arguments>
+            <argument name="idFieldName" xsi:type="string">entity_id</argument>
+            <argument name="model" xsi:type="string">Ticaje\Dummy\Model\Dummy</argument>
+            <argument name="resourceModel" xsi:type="string">Ticaje\Dummy\Model\ResourceModel\Dummy</argument>
+        </arguments>
+    </virtualType>
+    <!-- Collection definition -->
+
+    <!-- Repository definition -->
+    <virtualType name="Ticaje\Dummy\Repository\DummyRepository" type="Ticaje\Persistence\Repository\Base\NewBaseRepository">
         <arguments>
             <argument name="object" xsi:type="string">Ticaje\Dummy\Model\Dummy</argument>
             <argument name="collection" xsi:type="string">Ticaje\Dummy\Model\ResourceModel\Dummy\Collection</argument>
             <argument name="searchResultsFactory" xsi:type="object">Magento\Framework\Api\SearchResultsInterfaceFactory</argument>
         </arguments>
     </virtualType>
+    <!-- Repository definition -->
 
     <type name="Ticaje\Dummy\Console\Command\Repository">
         <arguments>

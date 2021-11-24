@@ -12,14 +12,14 @@ namespace Ticaje\Dummy\Model;
 
 use Magento\Framework\Model\AbstractModel;
 use Magento\Framework\DataObject\IdentityInterface;
-
+use Ticaje\Contract\Persistence\Entity\EntityInterface;
 use Ticaje\Dummy\Model\ResourceModel\Dummy as ResourceModelClass;
 
 /**
  * Class Dummy
  * @package Ticaje\Dummy\Model
  */
-class Dummy extends AbstractModel implements IdentityInterface
+class Dummy extends AbstractModel implements IdentityInterface, EntityInterface
 {
     const CACHE_TAG = 'dummy_table';
 
