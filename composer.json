@@ -13,8 +13,7 @@
   "description": "This extension creates room for testing core module functionalities",
   "type": "magento2-module",
   "require": {
-    "php": "^7.1",
-    "magento/product-community-edition": "*",
+    "php": "^7.0",
     "ticaje/base": "^1.0",
     "ticaje/m2-configuration": "^1.0",
     "ticaje/agnostic-connector": "^1.0"
@@ -25,7 +24,7 @@
       "url": "https://repo.magento.com/"
     }
   ],
-  "version": "1.2.0",
+  "version": "1.2.1",
   "autoload": {
     "files": [
       "registration.php"
