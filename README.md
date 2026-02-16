@@ -5,7 +5,7 @@
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/ticaje/m2-dummy-extension.svg?style=flat-square)](https://packagist.org/packages/ticaje/m2-dummy-extension)
 [![Quality Score](https://img.shields.io/scrutinizer/g/M-Contributions/M2-Dummy-Pool.svg?style=flat-square)](https://scrutinizer-ci.com/g/M-Contributions/M2-Dummy-Pool)
 [![Total Downloads](https://img.shields.io/packagist/dt/ticaje/m2-dummy-extension.svg?style=flat-square)](https://packagist.org/packages/ticaje/m2-dummy-extension)
-[![Blog](https://img.shields.io/badge/Blog-hectorbarrientos.com-magenta)](https://hectorbarrientos.com)
+[![Author](https://img.shields.io/badge/HBLateral.com-%2302113a?style=labelColor=lightgrey)](https://hblateral.com)
 
 ## Preface
 
